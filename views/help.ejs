@@ -4,23 +4,33 @@
  <% include partials/head %> 
 </head>
 <body>
-<% include partials/menu %><div class="container-fluid bg-3 text-center">    
-<h3><%= page %></h3>
-</br>
-<div class="row">
-    <div class="col-sm-4">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      
+  <% include partials/menu %>
+  <div class="container-fluid bg-3 text-center">    
+    <div class="main">
+      <ul class="cards">
+        <li class="cards_item">
+          <div class="card">
+            <div class="card_image"><img src="https://picsum.photos/500/300/?image=40"></div>
+            <div class="card_content">
+              <h2 class="card_title">Using the site</h2>
+              <p class="card_text">Find help on using the site</p>
+              <button class="btn card_btn">Read More</button>
+            </div>
+          </div>
+        </li>
+        <li class="cards_item">
+          <div class="card">
+            <div class="card_image"><img src="https://picsum.photos/500/300/?image=42"></div>
+            <div class="card_content">
+              <h2 class="card_title">FDM Resources</h2>
+              <p class="card_text">Find a list of FDM Resources here</p>
+              <button class="btn card_btn">Read More</button>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
-    <div class="col-sm-4"> 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-    <div class="col-sm-4"> 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-  </div>
-</div>
-<% include partials/footer %>
-</body>
+  <% include partials/footer %>
+  </body>
 <% include partials/script %>
 </html>

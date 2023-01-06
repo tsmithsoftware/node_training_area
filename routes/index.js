@@ -51,4 +51,9 @@ router.get('/profile', function(req, res, next) {
   res.render('profile', {page:'Profile goes here!', menuId:'profile'});
 });
 
+/* GET test page */
+router.get('/calendar', function(req, res, next) {
+  res.render('calendar', {page:'Profile goes here!', menuId:'calendar'});
+});
+
 module.exports = router;
