@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <% include partials/head %> 
+ <script type="text/javascript">
+  function toggle_visibility(id) {
+      var box = document.getElementById(id);
+      if(box.style.display == 'none')
+      {
+          box.style.display = 'block';
+      }
+      else
+      {
+          box.style.display = 'none';
+      }
+  }
+  </script>
+</head>
+<body>
+<% include partials/menu %><div class="container-fluid bg-3 text-center">    
+  <p/>
+  <div class="row">
+    Question Count: <%=questions.length%>
+  </div>
+  <p/>
+  <div class="row">
+    <% for (var i = 0; i < questions.length; i++) { %>
+      <div id="question<%= i%>" onclick="toggle_visibility('answer<%= i%>')">
+          Q: <%= questions[i].questionText %>
+        </div>
+      <div id="answer<%= i%>" style="display:none">
+          A: <%= questions[i].questionAnswer %>
+        </div>
+      <% } %>
+  </div>
+  <p/>
+</p>
+  <div id="submitWindow" class="curved-box">
+    Please submit new questions here: <br/>
+    <form action="/result" method="POST">
+      <!-- Creating the parameter Username as type= "text"-->
+      <label>Question: </label>
+      <input type="text" placeholder="Question" name="question"><br><br>
+      <!-- Creating the parameter Email as type= "text"-->
+      <label>Answer: </label>
+      <input type="text" placeholder="Answer" name="answer"><br><br>
+      <!-- Creating the submit button -->
+      <button>Submit</button>
+  </form>
+  </div>
+  <p/>
+<% include partials/footer %>
+</body>
+<% include partials/script %>
+</html>
