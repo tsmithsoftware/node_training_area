@@ -17,24 +17,26 @@
   </script>
 </head>
 <body>
-<% include partials/menu %><div class="container-fluid bg-3 text-center">    
+<% include partials/menu %>
+<div class="container-fluid bg-3 text-center">    
   <p/>
-  <div class="row">
-    Question Count: <%=questions.length%>
-  </div>
-  <p/>
-  <div class="row">
+  <div class="archive">
     <% for (var i = 0; i < questions.length; i++) { %>
-      <div id="question<%= i%>" onclick="toggle_visibility('answer<%= i%>')">
-          Q: <%= questions[i].questionText %>
+      <article class="article">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+              Q: <%= questions[i].questionText %>
+              <p/>
+            <div class="flip-card-back">
+              A: <%= questions[i].questionAnswer %>
+            </div>
+          </div>
         </div>
-      <div id="answer<%= i%>" style="display:none">
-          A: <%= questions[i].questionAnswer %>
-        </div>
-      <% } %>
+      </article>
+    <% } %>
   </div>
   <p/>
-</p>
+  <p/>
   <div id="submitWindow" class="curved-box">
     Please submit new questions here: <br/>
     <form action="/result" method="POST">

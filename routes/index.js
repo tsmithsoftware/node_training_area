@@ -37,7 +37,7 @@ router.get('/test', function(req, res, next) {
   res.render('test', {page:'Content goes here!', menuId:'test'});
 });
 
-/* GET test page */
+/* GET interview page */
 router.get('/interview', function(req, res, next) {
   res.render('interview', {page:'Interview preparation resources', menuId:'interview'});
 });
@@ -57,42 +57,42 @@ router.post('/result', function(req, res, next) {
   )
 })
 
-/* GET test page */
+/* GET knowledge page */
 router.get('/knowledge', function(req, res, next) {
   res.render('knowledge', {page:'Knowledge goes here!', menuId:'knowledge'});
 });
 
-/* GET test page */
+/* GET attend page */
 router.get('/attend', function(req, res, next) {
   res.render('attend', {page:'Attendance goes here!', menuId:'attend'});
 });
 
-/* GET test page */
+/* GET help page */
 router.get('/help', function(req, res, next) {
   res.render('help', {page:'Help goes here!', menuId:'help'});
 });
 
-/* GET test page */
+/* GET train page */
 router.get('/train', function(req, res, next) {
   res.render('train', {page:'Training goes here!', menuId:'train'});
 });
 
-/* GET test page */
+/* GET recruit page */
 router.get('/recruit', function(req, res, next) {
   res.render('recruit', {page:'Recruit goes here!', menuId:'recruit'});
 });
 
-/* GET test page */
+/* GET social page */
 router.get('/social', function(req, res, next) {
   res.render('social', {page:'Social goes here!', menuId:'social'});
 });
 
-/* GET test page */
+/* GET profile page */
 router.get('/profile', function(req, res, next) {
   res.render('profile', {page:'Profile goes here!', menuId:'profile'});
 });
 
-/* GET test page */
+/* GET calendar page */
 router.get('/calendar', function(req, res, next) {
   res.render('calendar', {page:'Profile goes here!', menuId:'calendar'});
 });
