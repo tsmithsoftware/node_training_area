@@ -2,7 +2,7 @@
 <h1 align="center">
   <br><img src="./readme_resources/f_style.png" alt="Markdownify" width="200">
   <br>
-  Consultant Support Portal - Team Foxtrot (Athena)
+  Support Portal
   <br>
 </h1>
 
