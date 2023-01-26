@@ -7,18 +7,20 @@
 <% include partials/menu %><div class="container-fluid bg-3 text-center">    
 <h3><%= page %></h3>
 </br>
-<div class="row">
-    <div class="col-sm-4">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      
-    </div>
-    <div class="col-sm-4"> 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-    <div class="col-sm-4"> 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-  </div>
+<div class="main">
+  <ul class="cards">
+    <li class="cards_item">
+      <a href="/addQuestions">
+      <div class="card">
+        <div class="card_image"><img src="https://picsum.photos/500/300/?image=28"></div>
+        <div class="card_content">
+          <h2 class="card_title">Interview Questions</h2>
+          <p class="card_text">Add an interview question here</p>
+        </div>
+      </div>
+    </a>
+    </li>
+  </ul>
 </div>
 <% include partials/footer %>
 </body>
