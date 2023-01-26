@@ -1,8 +1,7 @@
 CREATE TABLE questions (
     questionId serial PRIMARY KEY,
 	questionText varchar(255),
-    questionAnswer varchar(255),
-    createdAt
+    questionAnswer varchar(255)
 );
 
 INSERT INTO questions(questionText, questionAnswer)
