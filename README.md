@@ -21,7 +21,7 @@
   <a href="#license">License</a>
 </p>
 
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
+![screenshot](./readme_resources/interview_bank.gif)
 
 ## Key Features
 
