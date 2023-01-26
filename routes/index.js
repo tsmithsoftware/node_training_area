@@ -41,6 +41,21 @@ router.post('/result', function(req, res, next) {
   )
 })
 
+/* POST add recording result page */
+router.post('/recordingResult', function(req, res, next) {
+  const QuestionDAO = require("../sequelize/daos/questionDAO")
+  const form = formidable({});
+
+  form.parse(req, (err, fields, files) => {
+    if (err) {
+      next(err);
+      return;
+    }
+    const response = ({ fields, files });
+    QuestionDAO.uploadFile(files).then(res.render('test', {page:'Content goes here!', menuId:'test'}))
+  });
+})
+
 /* GET knowledge page */
 router.get('/knowledge', function(req, res, next) {
   res.render('knowledge', {page:'Knowledge goes here!', menuId:'knowledge'});
