@@ -1,3 +1,4 @@
+const { formidable, errors } = require('formidable')
 var express = require('express');
 var router = express.Router();
 
@@ -29,7 +30,7 @@ router.get('/interview', function(req, res, next) {
 /* GET add interview question pages */
 router.get('/addQuestions', function(req, res, next) {
   const QuestionDAO = require("../sequelize/daos/questionDAO")
-  QuestionDAO.getAllQuestions().then(questions => res.render('addQuestions', {page:'Add Questions', menuId:'addQuestions', questions: questions}));
+  QuestionDAO.getAllQuestions().then(questions => res.render('addQuestions', {page:'Add Questions', menuId:'addQuestions', questions: questions, hasSubmitted: false}));
 });
 
 /* POST add question result page */
@@ -52,7 +53,9 @@ router.post('/recordingResult', function(req, res, next) {
       return;
     }
     const response = ({ fields, files });
-    QuestionDAO.uploadFile(files).then(res.render('test', {page:'Content goes here!', menuId:'test'}))
+    QuestionDAO.uploadFile(files).then(
+      QuestionDAO.getAllQuestions().then(questions => res.render('addQuestions', {page:'Add Questions', menuId:'addQuestions', questions: questions, hasSubmitted: true}))
+    )
   });
 })
 

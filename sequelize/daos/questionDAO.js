@@ -1,5 +1,6 @@
 const { sequelize, Sequelize } = require("../../models/index")
 const Question = require('../models/question')(sequelize, Sequelize)
+const { DateTime } = require('luxon');
 
 module.exports = {
   uploadFile: function(file) {
@@ -11,14 +12,15 @@ module.exports = {
       .catch((err) => {
         reject(err)
       })
-      .then(function (serverMessage) {
-        const loc1 = file.userFile.filepath
-        const fileName = file.userFile.originalFilename
+      .then(function () {
+      const originalFileLocation = file.userFile.filepath
+       const dt = DateTime.local();
+       const fileName = dt.day + "_" + dt.month + "_" + dt.year + "_" + file.userFile.originalFilename
         console.log(fileName)
         ftp.list('/')
         .then(() => {
           console.log(fileName)
-          ftp.put(loc1, "hello.txt")
+          ftp.put(originalFileLocation, fileName)
           .then(() => {
             ftp.end()
             resolve()

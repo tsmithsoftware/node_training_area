@@ -52,6 +52,9 @@
   </div>
   <p/>
   <p/>
+  <% if (hasSubmitted) { %>
+    <div id="confirmSubmit" visibility="none">Video uploaded!</div>
+  <% } %>
   <div id="submitFileWindow" class="curved-box">
     Please upload new recordings using this form: <br/>
   <form action='/recordingResult' method='POST' enctype='multipart/form-data'>
