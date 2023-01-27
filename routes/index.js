@@ -1,59 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
-const { Sequelize } = require("sequelize");
+const db = require("../models/index")
 
-/** Check database connection before loading webapp */
-let sequelize = new Sequelize("db", "user", "password", {
-  host: "db",
-  dialect: "mysql",
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000,
-    idle: 10000,
-  },
-  define: {
-    timestamps: false
-  }
-});
-
-sequelize
+db.sequelize
   .authenticate()
   .then(() => {
     console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-    sequelize = new Sequelize("db", "user", "password", {
-      host: "host.docker.internal",
-      dialect: "mysql",
-      pool: {
-        max: 5,
-        min: 0,
-        acquire: 30000,
-        idle: 10000,
-      },
-      define: {
-        timestamps: false
-      }
-    });
   }).catch(err => {
-    console.error('Unable to connect to the database:', err);
-    sequelize = new Sequelize("db", "user", "password", {
-      host: "localhost",
-      dialect: "mysql",
-      pool: {
-        max: 5,
-        min: 0,
-        acquire: 30000,
-        idle: 10000,
-      },
-      define: {
-        timestamps: false
-      }
-    });
-  });
+    console.log("error!" + err)
+  })
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

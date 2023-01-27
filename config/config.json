@@ -1,0 +1,16 @@
+{
+  "development": {
+    "username": "user",
+    "password": "password",
+    "database": "db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "docker": {
+    "username": "user",
+    "password": "password",
+    "database": "db",
+    "host": "db",
+    "dialect": "mysql"
+  }
+}

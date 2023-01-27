@@ -7,6 +7,8 @@ module.exports = (sequelize, type) => {
       },
       questionText: type.STRING,
       questionAnswer: type.STRING
+    }, {
+      timestamps: false
     })
   }
   
