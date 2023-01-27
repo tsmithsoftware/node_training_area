@@ -9,10 +9,8 @@
 <h4 align="center">A minimal web application built on <a href="http://electron.atom.io" target="_blank">Docker</a> and <a href="">Node.js</a>.</h4>
 
 <p align="center">
-  <a href="https://badge.fury.io/js/electron-markdownify">
-    <img src="https://badge.fury.io/js/electron-markdownify.svg"
+    <img src="https://badgen.net/badge/version/1/blue"
          alt="Gitter">
-  </a>
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
