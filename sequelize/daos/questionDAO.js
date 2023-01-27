@@ -1,7 +1,5 @@
-const db = require('../sequelizeInstance')
-const sequelizeInstance = db.sequelizeInstance
-const Sequelize = db.Sequelize
-const Question = require('../models/question')(sequelizeInstance, Sequelize)
+const { sequelize, Sequelize } = require("../../models/index")
+const Question = require('../models/question')(sequelize, Sequelize)
 
 module.exports = {
   getAllQuestions: function () {
