@@ -29,6 +29,13 @@
 * Cross platform
   - Windows, macOS and Linux ready.
 
+## Broad structure
+The project is comprised of:
+
+* A MySQL Docker container holding data
+* A dockerised Node.js web front end 
+* A dockerised FTP server using https://github.com/garethflowers/docker-ftp-server
+
 ## How To Use
 
 To clone and run this application, you'll need [Git](https://git-scm.com), [Docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/) installed on your computer. From your command line:

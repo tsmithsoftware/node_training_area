@@ -1,3 +1,4 @@
+const { formidable, errors } = require('formidable')
 var express = require('express');
 var router = express.Router();
 
@@ -29,7 +30,7 @@ router.get('/interview', function(req, res, next) {
 /* GET add interview question pages */
 router.get('/addQuestions', function(req, res, next) {
   const QuestionDAO = require("../sequelize/daos/questionDAO")
-  QuestionDAO.getAllQuestions().then(questions => res.render('addQuestions', {page:'Add Questions', menuId:'addQuestions', questions: questions}));
+  QuestionDAO.getAllQuestions().then(questions => res.render('addQuestions', {page:'Add Questions', menuId:'addQuestions', questions: questions, hasSubmitted: false}));
 });
 
 /* POST add question result page */
@@ -39,6 +40,23 @@ router.post('/result', function(req, res, next) {
   QuestionDAO.postQuestion(body.question, body.answer).then(
     result => res.render('result', {page:'Show results here', menuId: 'result', result: result})
   )
+})
+
+/* POST add recording result page */
+router.post('/recordingResult', function(req, res, next) {
+  const QuestionDAO = require("../sequelize/daos/questionDAO")
+  const form = formidable({});
+
+  form.parse(req, (err, fields, files) => {
+    if (err) {
+      next(err);
+      return;
+    }
+    const response = ({ fields, files });
+    QuestionDAO.uploadFile(files).then(
+      QuestionDAO.getAllQuestions().then(questions => res.render('addQuestions', {page:'Add Questions', menuId:'addQuestions', questions: questions, hasSubmitted: true}))
+    )
+  });
 })
 
 /* GET knowledge page */
